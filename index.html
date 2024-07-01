@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>-: Functions :-</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="blue"></div>
+    <div class="heading">
+      <div class="space"></div>
+      <div class="head">
+        <h1>
+          -: Functions :-<br />
+          -: Functions: passing them data :-<br />
+          -: passing data back from them :-<br />
+          -: Functions: local vs. global variables:-
+        </h1>
+      </div>
+      <div class="space"></div>
+    </div>
+    <div class="blue-buttom">
+      <div class="para">
+        Assinment # 35-38 <br />
+        JAVASCRIPT
+      </div>
+    </div>
+    <div class="chap">
+      <h1><br />C h a p t e r s</h1>
+      <br />
+    </div>
+
+    <div class="moiz">
+      <h1>-: Functions :-</h1>
+      <p class="ali">
+        A function is a block of JavaScript that robotically does the same thing
+        again and again, <br />
+        whenever you invoke its name. It saves you repetitive coding and makes
+        your code easier to <br />
+        understand. <br />
+        On your website, suppose there are several pages where you want to
+        display an alert that <br />
+        tells the user the current time. (To keep it simple, we'll settle for
+        24-hour time rather than <br />
+        converting to a.m. and p.m.) The code might look like this. <br />
+        1 var now = new Date(); <br />
+        2 var theHr = now.getHours(); <br />
+        3 var theMin = now.getMinutes(); <br />
+        4 alert("time: " + theHr + ":" + theMin); <br />
+        You could write this block of code over and over again, every time you
+        need it. Or you <br />
+        could write it once as a function, naming it, say, tellTime. After that,
+        this is the only code <br />
+        you'll need in order to make the whole block execute: <br />
+        tellTime(); <br />
+        Whenever JavaScript sees that short statement, the time-telling block
+        executes. <br />
+        This is how you package the one-off code above as a repeatable function:
+        <br />
+        1 function tellTime() { <br />
+        2 var now = new Date(); <br />
+        3 var theHr = now.getHours(); <br />
+        4 var theMin = now.getMinutes(); <br />
+        5 alert("Current time: "+ theHr + ":" + theMin); <br />
+        6 } <br />
+        The time-telling code—the code that creates the Date object, extracts
+        the time, formats it, <br />
+        and displays an alert—is exactly the same code we started with, but is
+        now packaged as a <br />
+        function. Here are the parts: <br />
+        1. On line 1 an opening declaration statement that includes: <br />
+        • the keyword function <br />
+        • a name I made up for the function <br />
+        • parentheses that identify it as a function <br />
+        • an opening curly bracket to enclose the code that will execute <br />
+        2. On lines 2 through 5 the same block of code that you saw before
+        executes, but it's <br />
+        indented for clarity. Opinions vary on how much to indent. I train you
+        to indent 2 spaces. <br />
+        3. On line 6 a closing curly bracket on its own line to enclose the code
+        that will execute <br />
+        Again, note that the calling code—the code that invokes the
+        function—does nothing more <br />
+        than state the name of the function including its parentheses. <br />
+        tellTime(); <br />
+        You can give a function any name that would be a legal variable name,
+        then add <br />
+        parentheses. Function-naming follows the same rules as variable naming
+        because, technically, <br />
+        a function is a variable. This will make more sense to you when you
+        learn more about <br />
+        functions in a subsequent chapter. <br />
+        Functions and the statements that call them may be separated by
+        thousands of lines of <br />
+        code. Typically, functions are in the same place as the main code—in an
+        external JavaScript <br />
+        file, at the end of the HTML body section, or in the HTML head section.
+        Normally, all the <br />
+        functions should precede the main code, so when they're called by the
+        main code, they're <br />
+        already loaded in memory and ready to go. <br />
+      </p>
+    </div>
+    <div class="moiz">
+      <h1>-: Functions: Passing them data :-</h1>
+      <p class="ali">
+        A function is a block of code that does something robotically, whenever
+        you invoke its <br />
+        name. For example, when you write greetUser(); a function with that name
+        executes. To be <br />
+        clear: The kind of function I'm talking about is one that you've written
+        yourself, and named <br />
+        yourself. <br />
+        Suppose that when you write greetUser(); a function is called that
+        displays an alert <br />
+        saying, "Hello, there." <br />
+        This is the code for the function. <br />
+        1 function greetUser() { <br />
+        2 alert("Hello, there."); <br />
+        3 } <br />
+        One of the really useful things about functions is that those
+        parentheses in the calling code <br />
+        don't have to be empty. If you put some data inside the parentheses, you
+        can pass that data to <br />
+        the function that it'll use when it executes. <br />
+        Suppose, instead of writing greetUser(); you write... <br />
+        greetUser("Hello, there."); <br />
+        Now, instead of just calling the function, you're calling it and passing
+        data to it. The <br />
+        string inside the parentheses, i.e. the data you're passing, is called
+        an argument. <br />
+        The function is now more versatile, because the message it displays is
+        no longer hardwired into <br />
+        it. It'll display any message that you pass to it from the calling code,
+        via the <br />
+        argument. <br />
+        In order for a function to become a programmable robot rather than a
+        one-job robot, you <br />
+        have to set it up to receive the data you're passing. Here's how you do
+        it. <br />
+        1 function greetUser(greeting) { <br />
+        2 alert(greeting); <br />
+        3 } <br />
+        So now we've filled the parentheses of both the calling code and the
+        function definition. <br />
+        The parentheses of the calling code contain an argument. In the example,
+        the argument is the <br />
+        string "Hello, there." And, as you can see in the example above, the
+        parentheses of the function <br />
+        definition now contain a variable, greeting. <br />
+        A variable inside the parentheses in a function statement is known as a
+        parameter. The <br />
+        parameter name is up to you. You can give it any name that would be
+        legal for a variable. Then <br />
+        you can use it to accomplish something in the body of the function. On
+        line 2 in the example <br />
+        above, I used it to specify the message in an alert. <br />
+        You don't have to declare a variable when it's used as a parameter in a
+        function <br />
+        definition. When it's used as a parameter, the declaration is implicit.
+        <br />
+        The argument in the statement that calls the function —"Hello,
+        there."—is the data that's <br />
+        passed to the function. The parameter inside the parentheses in the
+        function definition catches <br />
+        the data that's passed. It now holds "Hello, there." In other words, the
+        string "Hello, there", <br />
+        specified in the function call, is assigned to greeting in the function.
+        Then that variable, <br />
+        greeting, is used to specify the message in the alert statement. <br />
+        The value passed to a function is used in the body of the function to
+        accomplish <br />
+        something. In this case, the value is used to specify the message in the
+        alert. <br />
+        In the example, the argument is a string, but it could just as easily be
+        a variable. In the <br />
+        following code, I declare the variable greeting and assign it the value
+        "Hello, there." Then, <br />
+        rather than using the string itself as an argument in the function call,
+        I use the variable. <br />
+        1 var greeting = "Hello, there." <br />
+        2 greetUser(greeting); <br />
+        In the example above, the name of the function greetUser, shares some of
+        its name with <br />
+        the parameter greeting, but that's just to make the code easy to
+        understand. The name of the <br />
+        function and the name of the parameter don't have to have anything in
+        common. And remember, <br />
+        these names are up to you, as long as you follow the variable-naming
+        rules. <br />
+        In the example, I named the argument in the calling code greeting, and
+        also named the <br />
+        parameter in the function code greeting. But this isn't necessary,
+        either. They don't have to <br />
+        match. No matter what an argument's name is, it is accepted by the
+        parameter, no matter what <br />
+        the parameter's name is. In the following code, the variable whatever is
+        the argument. The <br />
+        parameter greeting doesn't match the name, but still catches the value.
+        <br />
+        Here's the function, once again, with the parameter greeting. <br />
+        1 function greetUser(greeting) { <br />
+        2 alert(greeting); <br />
+        3 } <br />
+        And here's the statement that calls the function, with the argument
+        whatever. <br />
+        1 var whatever = "Hello, there."; <br />
+        2 greetUser(whatever); <br />
+        It's okay that the name of the argument and the name of the parameter
+        don't match. The <br />
+        parameter still catches the argument, the string "Hello, there." <br />
+        Still, it often makes sense to give an argument and a parameter the same
+        name, for clarity. <br />
+        A number, either a literal number or a number represented by a variable,
+        can be an <br />
+        argument. In the following code I declare the variable almostAMil and
+        assign the number <br />
+        999999 to it. Then I use almostAMil as the argument in the function
+        call. <br />
+        1 var almostAMil = 999999; <br />
+        2 showBigNum(almostAMil); <br />
+        Alternatively, if I wanted to, I could use the literal number 999999 as
+        the argument. <br />
+        showBigNum(999999); <br />
+        You can pass any number of arguments, separated by commas, to a
+        function. Typically, <br />
+        the function has the same number of parameters, also separated by
+        commas. (There are rare <br />
+        exceptions for special cases.) Again, when you use variables as
+        arguments, their names don't <br />
+        have to match the names of the parameters. JavaScript matches up
+        arguments and parameters <br />
+        according to their order, not their names. The first argument in the
+        list is passed to the first <br />
+        parameter in the list, the second argument is passed to the second
+        parameter, and so on. <br />
+        As arguments, you can use any combination of variables, strings, and
+        literal numbers. In <br />
+        the following example, the calling code passes a variable, a string, and
+        a number to the <br />
+        function. Three parameters catch the values. The function concatenates
+        them to create an alert <br />
+        message. <br />
+        First, here's the function. <br />
+        1 function showMessage(m, string, num); <br />
+        2 alert(m + string + num); <br />
+        3 } <br />
+        Now here's the statement that calls the function. <br />
+        1 var month = "March"; <br />
+        2 showMessage(month, "'s winner number is ", 23); <br />
+        The argument, month, a variable, is passed to the parameter m. The
+        argument "'s winning <br />
+        number is ", a string, is passed to the parameter string. The argument
+        23, a literal number, is <br />
+        passed to the parameter num. <br />
+        When the code executes, an alert displays saying, "March's winning
+        number is 23." <br />
+        Normally, you'd use all the parameters included in the function
+        definition as variables in <br />
+        the code that executes, because, why else would you want them in the
+        function definition? But <br />
+        there's nothing that says you must use them all. And you certainly don't
+        have to use them in the <br />
+        same order in which they appear within the parentheses. Each one is a
+        full-fledged variable <br />
+        that, within the function, you can use the way you'd use any variable.
+        <br />
+      </p>
+    </div>
+    <div class="moiz">
+      <h1>-: Functions: Passing data back from them :-</h1>
+      <p class="ali">
+        As you learned in the last chapter, a function becomes more versatile
+        when you pass data <br />
+        to it so it can deliver a custom job. <br />
+        But a function can do even more. It can pass data back to the calling
+        code. <br />
+        Let's say you charge a minimum shipping rate of $5, plus 3 percent of
+        the merchandise <br />
+        total above $50, up to $100. You offer free shipping when the total hits
+        $100. Here's the code <br />
+        that calculates the order total. <br />
+        1 var orderTot; <br />
+        2 if (merchTot >= 100) { <br />
+        3 orderTot = merchTot; <br />
+        4 } <br />
+        5 else if (merchTot < 50.01) { <br />
+        6 orderTot = merchTot + 5; <br />
+        7 } <br />
+        8 else { <br />
+        9 orderTot = merchTot + 5 + (.03 * (merchTot - 50)); <br />
+        10 } <br />
+        If the merchandise total is at least $100 (line 2), the order total is
+        the same as the <br />
+        merchandise total (line 3). If the merchandise total is $50 or less
+        (line 5), the order total is the<br />
+        merchandise total plus $5 (line 6). If the order total is between $50
+        and $100 (line 8), the <br />
+        order total is the merchandise total plus $5 plus 3 percent of the
+        amount over $50 (line 9). <br />
+        Something costing $150 is $150 total. <br />
+        Something costing $15 is $20 total. <br />
+        Something costing $70 is $75.60 total. <br />
+        Here's how we turn the code above into a function. <br />
+        1 function calcTot(merchTot) { <br />
+        2 var orderTot; <br />
+        3 if (merchTot >= 100) { <br />
+        4 orderTot = merchTot; <br />
+        5 } <br />
+        6 else if (merchTot < 50.01) { <br />
+        7 orderTot = merchTot + 5; <br />
+        8 } <br />
+        9 else { <br />
+        10 orderTot = merchTot + 5 + (.03 * (merchTot - 50)); <br />
+        11 } <br />
+        12 return orderTot; <br />
+        13 } <br />
+        The thing to focus on here is that we declare a variable, orderTot (line
+        2), and then— <br />
+        here's what's new—after the processing is done and the merchandise total
+        is known, the <br />
+        function returns the value held in orderTot to the calling code (line
+        12). It passes data back. <br />
+        But then the calling code needs something to catch the data. What else
+        could this <br />
+        something be but a variable? Here's the code that calls the function.
+        <br />
+        var totalToCharge = calcTot(79.99); <br />
+        If you're new to coding, this statement may look odd to you. How can a
+        function be <br />
+        assigned to a variable? You may be used to seeing a literal value
+        assigned to a variable.... <br />
+        var totalToCharge = 85.00; <br />
+        You may be used to seeing a variable assigned to a variable... <br />
+        var totalToCharge = merchTotal; <br />
+        And you may be used to seeing an arithmetic or other expression assigned
+        to a variable... <br />
+        var totalToCharge = merchTotal + ship + tax; <br />
+        But assigning a function to a variable? <br />
+        Well, it's not really that odd, because, remember, what you're actually
+        assigning to the <br />
+        variable is the value passed back by the return statement in the
+        function code. The <br />
+        statement... <br />
+        var totalToCharge = calcTot(79.99); <br />
+        ...is shorthand for: "Assign to the variable totalToCharge the value
+        returned by the <br />
+        function calcTot." <br />
+        So now there's two-way communication between the calling code and the
+        function. The <br />
+        calling code passes the value 79.99 to the function, which is caught by
+        the function's parameter <br />
+        merchTot. This variable, merchTot, is used in the body of the function
+        to calculate an order <br />
+        total. Then, through the return statement, that order total is passed
+        back to totalToCharge in <br />
+        the calling code. It's a complete circle. <br />
+        Notice that the variable in the calling code, totalToCharge, that
+        catches the value is <br />
+        different from the variable inside the function, merchTot, that returns
+        the value. I did this <br />
+        purposely, so you wouldn't think the two variables have to share the
+        same name. In the last <br />
+        chapter you learned that when an argument in the calling code passes a
+        value to a parameter in <br />
+        the function definition, they can have the same name, but don't have to.
+        The same applies to the <br />
+        variable that's returned from a function and the variable in the calling
+        code that catches it. They <br />
+        can share the same name, but don't have to. <br />
+        Anywhere you can use a variable, you can use a function. (Technically, a
+        function is a <br />
+        variable.) For example... <br />
+        You can use a function to specify the message in an alert. <br />
+        alert(calcTot(79.99)); <br />
+        In the example above, the alert message is the value returned by the
+        function calcTot <br />
+        when the function is passed 79.99 as a parameter. <br />
+        You can use a function in an expression. <br />
+        var orderTot = merchTot + calcTax(merchTot); <br />
+        In the example above, the value assigned to orderTot is the sum of
+        merchTot and the <br />
+        value returned by the function calcTax when the function is passed
+        merchTot as an argument. <br />
+        You can use a function in a function call. <br />
+        var tot = calc(merchTot, calcTax(merchTot)); <br />
+        In the example above, the calling code passes two arguments to the
+        function calc. The <br />
+        first argument is merchTot. The second argument is the function calcTax,
+        which is also <br />
+        passed merchTot. <br />
+        Within a function, you can call another function. <br />
+        1 function calcTot(price) { <br />
+        2 return price + calcShip(price); <br />
+        3 } <br />
+        In the example above, the function calcTot calls the function calcShip.
+        It passes price <br />
+        as an argument and receives the shipping charge back. It adds the
+        shipping charge to the price, <br />
+        and returns the sum to the original calling code as a total. <br />
+        You've learned that you can pass any number of arguments to any number
+        of parameters. <br />
+        Unfortunately, you don't have this flexibility in the return statement.
+        No matter how many <br />
+        parameters it takes or how much processing it does, a function can
+        return only a single value to <br />
+        the code that calls it. <br />
+      </p>
+    </div>
+    <div class="moiz">
+      <h1>-: Functions : Local vs. global variables :-</h1>
+      <p class="ali">
+        Now we come to the subject of variable scope. That is, the difference
+        between global <br />
+        and local variables. Some variables have global scope, which makes them
+        global variables. <br />
+        Other variables have local scope, which makes them local variables.
+        Nothing could be <br />
+        simpler, but for some reason, when the subject comes up in books and
+        tutorials, obfuscation <br />
+        often rules. Relax. This will be easy. <br />
+        A global variable is one that's declared in the main body of your
+        code—that is, not inside <br />
+        a function. <br />
+        A local variable is one that's declared inside a function. It can be
+        either a parameter of <br />
+        the function, which is declared implicitly by being named as a
+        parameter, or a variable <br />
+        declared explicitly in the function with the var keyword. <br />
+        What makes a global variable global is that it is meaningful in every
+        section of your code, <br />
+        whether that code is in the main body or in any of the functions. Global
+        scope is like globa <br />l fame. Wherever you go in the world, they've
+        heard of Bill Clinton. <br />
+        A local variable is one that's meaningful only within the function that
+        declares it. Local <br />
+        scope is like local fame. The mayor of Duluth is known within Duluth,
+        but pretty much <br />
+        unknown everywhere else. <br />
+        So there are two differences between global and local variables—where
+        they're <br />
+        declared, and where they're known and can be used. <br />
+        Before I show you the first example, I want you to set aside what you
+        know about passing <br />
+        values to a function through arguments, and passing a value back to the
+        calling code by way of <br />
+        the return statement. Pretend you don't know anything about these
+        things. I'll come back to <br />
+        them later. Here's an example. <br />
+        First, in the main code, a variable declaration followed by a call to a
+        function: <br />
+        1 var theSum <br />
+        2 addNumbers(); <br />
+        Then the function: <br />
+        1 function addNumbers() { <br />
+        2 theSum = 2 + 2; <br />
+        3 } <br />
+        In the example, the variable theSum is declared in the main code. The
+        function <br />
+        addNumbers is called to assign it a value. Having been declared in the
+        main code, the variable <br />
+        has global scope, so this function or any other function can use it. So
+        can anything in the main<br />
+        code. The function assigns the sum of 2 + 2 to this global variable.
+        Since the variable has <br />
+        global scope, the assignment is meaningful in all sections of your code,
+        both the main code and <br />
+        in all functions. The variable now has the value 4 in the function
+        addNumbers, in the main <br />
+        code, and in any other functions that use it. It doesn't matter where I
+        write... <br />
+        alert(theSum); <br />
+        Wherever I write it—in the main code, in the function addNumbers, or in
+        any other <br />
+        function, an alert will display the number 4. <br />
+        But if I declare the variable not in the main code, but inside the
+        function... <br />
+        1 function addNumbers() { <br />
+        2 var theSum = 2 + 2; <br />
+        3 } <br />
+        ...the variable has the value 4 only inside the function. Everywhere
+        else, it's unknown. <br />
+        Everywhere else, it has no value at all. Since the variable theSum is
+        declared with the <br />
+        keyword var inside the function, not in the main code, its scope is
+        local. It is meaningful only <br />
+        inside the function. In other functions and in the main code, it is
+        unknown. If I write... <br />
+        alert(theSum); <br />
+        ...in the function, an alert displays the number 4, because the variable
+        theSum is known <br />
+        inside the function, where it was declared. But if I write the same
+        alert statement anywhere <br />
+        else—in the main code or in another function—the code breaks, because
+        theSum is unknown <br />
+        outside the function. <br />
+        Note: I say that a variable has local scope when you declare it in a
+        function. By <br />
+        "declaring it in a function" I mean that you declare the variable
+        explicitly with the keyword <br />
+        var—as opposed to casually introducing it into the function without var.
+        (The exception is if <br />
+        you name it as a parameter, in which case it's declared implicitly as a
+        local variable of the <br />
+        function.) If you get sloppy and begin using a new variable in the body
+        of a function without <br />
+        explicitly declaring it in the function with the keyword var, it is
+        global—even though you <br />
+        haven't declared it anywhere in the main code. <br />
+        Now, to illustrate a point, I'm going to do something you'd actually
+        never want to do in <br />
+        your code. I'm going to declare a variable both in the main code and in
+        the function. <br />
+        First, in the main code: <br />
+        1 var theSum = 1000; <br />
+        2 addNumbers(); <br />
+        Then in the function: <br />
+        1 function addNumbers() { <br />
+        2 var theSum = 2 + 2; <br />
+        3 } <br />
+        By declaring the variable twice—once in the main code and again in the
+        function—I've <br />
+        created two different variables that share the same name. One theSum is
+        global. The other <br />
+        theSum is local. This is not something you would ever want to do—it sets
+        you up for coding <br />
+        mistakes and makes your code almost impossible to follow—but I did it to
+        show the difference <br />
+        between global and local scope. By declaring theSum once in the main
+        code, and again in the <br />
+        function, I've created (1) a global variable that's useable almost
+        everywhere and (2) a local <br />
+        variable of the same name that's useable only inside the function. Why
+        do I say the global <br />
+        variable is useable almost everywhere? Because it's no good inside the
+        function. Inside the <br />
+        function, the name theSum stands for a local variable, so the name can't
+        refer to the global <br />
+        variable. In this situation, coders say the global variable is in the
+        shadow of the local <br />
+        variable. Inside the function, it can't be seen. Inside the function,
+        only the local variable of that <br />
+        name can be seen. <br />
+        The local variable theSum has a value of 4 inside the function, but
+        theSum outside the <br />
+        function has a value of 1000. <br />
+        Now let's journey a little farther into Wonderland, Alice. <br />
+        First, a statement in the main code: <br />
+        1 var theSum = addNumbers(); <br />
+        Then a function: <br />
+        1 function addNumbers() { <br />
+        2 var theSum = 2 + 2; <br />
+        3 return theSum; <br />
+        4 } <br />
+        Again, this isn't something you'd actually code. I use the example only
+        to demonstrate <br />
+        principles. In this code, you still have two different variables—a
+        global variable and a local <br />
+        variable—that share the same name, theSum, but now, thanks to the return
+        statement, the <br />
+        value of the local variable is assigned to the global variable. Now both
+        variables have the <br />
+        same name and the same value, but they're still different variables.
+        <br />
+        Which brings us to a question you may be asking: <br />
+        If a function can use a global variable, why do you have to pass a value
+        from an argument <br />
+        to a parameter? Why not just declare a global variable, then have the
+        function use it? Well, you<br />
+        can, but asking functions to work with global variables is asking them
+        to eavesdrop on the <br />
+        main code, and like human eavesdropping, it invites mischief in the form
+        of confusion and <br />
+        unintended consequences. There is no controversy among coders about
+        this. It's always best to <br />
+        pass values explicitly to functions through arguments. Global variables
+        have no place in <br />
+        functions. <br />
+        The same logic applies to the the argument for using the return
+        statement. You can <br />
+        change the value of a global variable within a function. When you do,
+        the value of it changes <br />
+        everywhere, including in the main code. No return is needed. But it's
+        better practice to usea <br />
+        local variable within the function, then pass that value back explicitly
+        through a return <br />
+        statement. <br />
+      </p>
+    </div>
+    <div class="moiz">
+      <h1>Assignment</h1>
+      <p class="ali">
+        <object
+          data="./chapters35-38.pdf"
+          type="application/pdf"
+          width="100%"
+          height="500px"
+        >
+          <p>
+            Unable to display PDF file.
+            <a href="./chapters35-38.pdf">Download</a>
+            instead.
+          </p>
+        </object>
+      </p>
+    </div>
+    <div class="chap">
+      <h1><br />Perform The Assignment</h1>
+      <br />
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
