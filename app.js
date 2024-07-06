@@ -85,10 +85,11 @@ document.write("<h4>Result :</h4>");
 document.write("<br>");
 document.write('<button id="btn" onclick="ques5()">Click Me</button>');
 function ques5() {
-
+    var squre = prompt("please give a squre number!");
+    document.getElementById('pere').innerHTML = '<br>' + squre * squre;
 }
 
-// document.write('<div id="pere"></div>')
+document.write('<h3 id="pere"></h3>')
 document.write("<br>");
 document.write("<br>");
 
@@ -96,15 +97,18 @@ document.write("<br>");
 
 document.write("<h3>Question no 06</h3>");
 document.write("<br>");
-document.write("<h3>Generator MarkSheet</h3>");
-document.write("<br>");
 document.write("<h4>Result :</h4>");
 document.write("<br>");
 document.write('<button id="btn" onclick="ques6()"">Click Me</button>');
 function ques6() {
-
+    var factorial = prompt("please give a factorial number!");
+    let result = 1;
+    for (let i = 2; i <= factorial; i++) {
+        result *= i;
+    }
+    document.getElementById('factorial').innerHTML = '<br>' + result;
 }
-// document.write('<div id="result"></div>')
+document.write('<h3 id="factorial"></h3>')
 document.write("<br>");
 document.write("<br>");
 
@@ -117,8 +121,15 @@ document.write("<h4>Result :</h4>");
 document.write("<br>");
 document.write('<button id="btn" onclick="ques7()">Click Me</button>');
 function ques7() {
-
+    var contnum = prompt('conunt number !');
+    var cotnum = contnum.length;
+    // for (var i = 1; i < contnum.length; i++) {
+    //     console.log(i);
+    //     break
+    // }
+    document.getElementById('count').innerHTML = '<br>' + cotnum;
 }
+document.write('<h3 id="count"></h3>')
 document.write("<br>");
 document.write("<br>");
 
@@ -131,8 +142,14 @@ document.write("<h4>Result :</h4>");
 document.write("<br>");
 document.write('<button id="btn" onclick="ques8()">Click Me</button>');
 function ques8() {
-
+    var Perpendicular = prompt('put the Perpendicular number!');
+    var Base = prompt('put the Base number!');
+    var perpenqure = Perpendicular * Perpendicular;
+    var basequre = Base * Base;
+    var calHypotenuse = perpenqure + basequre;
+    document.getElementById('hypo').innerHTML = `<br>Hypotenuse : ${calHypotenuse}`;
 }
+document.write('<h3 id="hypo"></h3>');
 document.write("<br>");
 document.write("<br>");
 
@@ -144,8 +161,16 @@ document.write("<h4>Result :</h4>");
 document.write("<br>");
 document.write('<button id="btn" onclick="ques9()">Click Me</button>');
 function ques9() {
-
+    var withe = prompt('width');
+    var hight = prompt('height');
+    function nameal(withe, hight) {
+        var area = withe * hight;
+        document.getElementById('area').innerHTML = `<br>Area : ${area}`;
+    }
+    nameal(withe, hight);
+    // document.getElementById('hypo').innerHTML = `<br>Hypotenuse : ${area}`;
 }
+document.write('<h3 id="area"></h3>');
 document.write("<br>");
 document.write("<br>");
 
@@ -157,7 +182,31 @@ document.write("<h4>Result :</h4>");
 document.write("<br>");
 document.write('<button id="btn" onclick="ques10()">Click Me</button>');
 function ques10() {
+    function isPalindrome(str) {
+        // Remove non-alphanumeric characters and convert to lowercase
+        str = str.toLowerCase().replace(/[\W_]/g, '');
 
+        // Initialize two pointers, one starting from the beginning and one from the end
+        let left = 0;
+        let right = str.length - 1;
+
+        // Compare characters from both pointers moving towards the center
+        while (left < right) {
+            if (str[left] !== str[right]) {
+                return false; // If characters do not match, it's not a palindrome
+            }
+            left++; // Move the left pointer forward
+            right--; // Move the right pointer backward
+        }
+
+        return true; // If all characters match, it's a palindrome
+    }
+
+    // Example usage:
+    console.log(isPalindrome("madam"));  // true
+    console.log(isPalindrome("racecar"));  // true
+    console.log(isPalindrome("hello"));  // false
+    console.log(isPalindrome("A man, a plan, a canal. Panama"));  // true    
 }
 document.write("<br>");
 document.write("<br>");
@@ -170,8 +219,16 @@ document.write("<h4>Result :</h4>");
 document.write("<br>");
 document.write('<button id="btn" onclick="ques11()">Click Me</button>');
 function ques11() {
-
+    var str = prompt('please put the sebtences in lower case!');
+    let words = str.split(' ');
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+    }
+    let capitalizedString = words.join(' ');
+    console.log(capitalizedString)
+    document.getElementById('upper').innerHTML = '<br>' + capitalizedString;
 }
+document.write('<h3 id="upper"></h3>')
 document.write("<br>");
 document.write("<br>");
 
